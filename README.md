@@ -82,6 +82,22 @@ Clone this repository to your desired folder:
   git clone https://github.com/Shisui6/car-rental-back-end.git
 ```
 
+### Database setup
+
+Connect to your local postgres database:
+
+```sh
+  add a .env file to the root directory
+  inside the .env file, set the following environment variables:
+
+  POSTGRES_USER=<username>
+  POSTGRES_PASSWORD=<password>
+  POSTGRES_HOST=<host>
+  POSTGRES_PORT=<port>
+
+  Make sure to replace the default text after the '=' sign with values for your local environment
+```
+
 ### Install
 
 Install this project with:
@@ -89,7 +105,7 @@ Install this project with:
 ```sh
   cd car-rental-back-end
   bundle install
-  rails: db:setup - create the database, load the schema, and initialize it with the seed data.
+  rails: db:create - create the database
   rails: db:migrate - run pending migrations for the current environment.
 ```
 
