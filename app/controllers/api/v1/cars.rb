@@ -3,9 +3,7 @@ class Api::V1::CarsController < ApplicationController
   before_action :set_user, only: %i[create destroy]
 
   # GET /cars
-  def index
-
-  end
+  def index end
 
   # GET /cars/1
   def show
@@ -13,14 +11,10 @@ class Api::V1::CarsController < ApplicationController
   end
 
   # POST /cars
-  def create
-
-  end
+  def create end
 
   # DELETE /cars/1
-  def destroy
-    
-  end
+  def destroy end
 
   private
 
