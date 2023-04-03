@@ -19,4 +19,11 @@ class Api::V1::carsController < ApplicationController
   # DELETE /cars/1
   def destroy
   end
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_car
+    @car = car.find(params[:id])
+  end
 end
