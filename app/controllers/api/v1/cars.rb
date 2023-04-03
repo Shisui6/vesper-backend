@@ -4,6 +4,7 @@ class Api::V1::CarsController < ApplicationController
 
   # GET /cars
   def index
+
   end
 
   # GET /cars/1
@@ -13,10 +14,12 @@ class Api::V1::CarsController < ApplicationController
 
   # POST /cars
   def create
+
   end
 
   # DELETE /cars/1
   def destroy
+    
   end
 
   private
