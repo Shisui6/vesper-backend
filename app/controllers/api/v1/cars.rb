@@ -1,3 +1,22 @@
 class Api::V1::carsController < ApplicationController
+  before_action :set_cars, only: %i[show destroy]
+  before_action :set_user, only: %i[create destroy]
 
+  # GET /cars
+  def index
+
+  end
+
+  # GET /cars/1
+  def show
+    render json: @car
+  end
+
+  # POST /cars
+  def create
+  end
+
+  # DELETE /cars/1
+  def destroy
+  end
 end
