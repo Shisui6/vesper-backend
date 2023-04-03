@@ -26,4 +26,8 @@ class Api::V1::carsController < ApplicationController
   def set_car
     @car = car.find(params[:id])
   end
+
+  def set_user
+    @user = current_user
+  end
 end
