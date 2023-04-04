@@ -9,8 +9,8 @@ class Reservation < ApplicationRecord
   private
 
   def check_availability
-    if car.reservations.where(date: date).any?
-      errors.add(:base, "Car is already reserved for this date")
-    end
+    return unless car.reservations.where(date:).any?
+
+    errors.add(:base, 'Car is already reserved for this date')
   end
 end
