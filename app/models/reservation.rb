@@ -3,7 +3,7 @@ class Reservation < ApplicationRecord
   belongs_to :car
 
   validates :date, :city, :duration, presence: true
-  validates :duration, numericality: { greater_than: 0 }
+  validates :duration, numericality: { greater_than: 0, only_integer: true }
   validate :check_availability
 
   private

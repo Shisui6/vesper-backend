@@ -1,14 +1,9 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[create]
   before_action :set_user, only: %i[update destroy]
-  before_action :authorized
 
   def index
-    @reservations = if current_user.admin == true
-                      Reservation.all
-                    else
-                      current_user.reservations
-                    end
+    @reservations = Reservation.all
     render json: { message: 'Showing Reservations', reservations: @reservations }, status: :ok
   end
 
@@ -24,20 +19,13 @@ class Api::V1::ReservationsController < ApplicationController
     end
   end
 
-  def set_reservation
-    @reservation = Reservation.find(params[:id])
-    return if @reservation.present?
-
-    json_response 'Cannot get reservation', false, {}, :not_found
-  end
-
   private
 
-  def set_user
-    @user = User.find(current_user.id)
+  def reservation_params
+    params.require(:reservation).permit(:date, :city, :duration)
   end
 
-  def reservation_params
-    params.require(:reservation).permit(:date, :city, :duration, :user_id, :car_id)
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end
