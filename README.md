@@ -5,7 +5,7 @@
 <details>
   <summary>📗 Table of Contents</summary>
   <ul>
-    <li><a href="#-car-rental-back-end-">📖 Car Rental Back End</a></li>
+    <li><a href="#-car-rental-back-end-">📖 Vesper-backend</a></li>
     <li><a href="#-built-with-">🛠 Built With</a></li>
     <li><a href="#-getting-started-">💻 Getting Started</a></li>
     <li><a href="#-authors-">👥 Authors </a></li>
@@ -21,9 +21,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Car Sharing App <a name="about-project"></a>
+# 📖 Vesper-backend <a name="about-project"></a>
 
-**Car Rental back End** is a api application.
+**Vesper-backend** is the rails backend API application for the full stack vesper app. It provides all the endpoints for the frontend to consume. Here the logic for the app is implemented.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -48,7 +48,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Displays data from rails API endpoints
+- Handles logic for storing and retrieving data from the database
+- Handle logic for authentication and authorization
+- Handles logic for returning data to the frontend
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
