@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_31_145729) do
     t.string "name"
     t.text "description"
     t.string "image"
-    t.string "type"
+    t.string "classification"
     t.string "model"
     t.string "year"
     t.integer "price_per_day"
