@@ -8,5 +8,6 @@ class Car < ApplicationRecord
   validates :classification, presence: true
   validates :model, presence: true
   validates :year, presence: true
+  validates :owner, presence: true
   validates :price_per_day, numericality: { greater_than_or_equal_to: 0 }, presence: true
 end
