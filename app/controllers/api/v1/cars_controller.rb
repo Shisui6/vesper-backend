@@ -40,10 +40,6 @@ class Api::V1::CarsController < ApplicationController
 
   private
 
-  def set_user
-    @user = current_user
-  end
-
   # Only allow a list of trusted parameters through.
   def car_params
     params.permit(:name, :description, :image, :classification, :model, :year, :price_per_day, :user_id)
