@@ -30,7 +30,7 @@ class Api::V1::CarsController < ApplicationController
 
   # DELETE /car/1
   def destroy
-    @car = car.find(params[:id])
+    @car = Car.find(params[:id])
     if @car.destroy
       render json: { success: true, message: 'car deleted successfully' }, status: :ok
     else
