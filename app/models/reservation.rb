@@ -4,13 +4,4 @@ class Reservation < ApplicationRecord
 
   validates :date, :city, :duration, presence: true
   validates :duration, numericality: { greater_than: 0, only_integer: true }
-  validate :check_availability
-
-  private
-
-  def check_availability
-    return unless car.reservations.where(date:).any?
-
-    errors.add(:base, 'Car is already reserved for this date')
-  end
 end

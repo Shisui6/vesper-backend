@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_31_145729) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_07_161715) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_31_145729) do
     t.string "name"
     t.text "description"
     t.string "image"
-    t.string "type"
+    t.string "make"
     t.string "model"
     t.string "year"
     t.integer "price_per_day"
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_31_145729) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.date "date"
+    t.string "date"
     t.string "city"
     t.integer "duration"
     t.bigint "user_id", null: false
