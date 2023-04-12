@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_31_145729) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.date "date"
+    t.string "date"
     t.string "city"
     t.integer "duration"
     t.bigint "user_id", null: false
