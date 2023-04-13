@@ -1,6 +1,6 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where(user_id: params[:id])
     render json: { message: 'Showing Reservations', reservations: @reservations }, status: :ok
   end
 
@@ -17,6 +17,6 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.permit(:date, :city, :duration, :user_id, :car_id)
+    params.require(:reservation).permit(:date, :car_name, :city, :duration, :user_id, :car_id)
   end
 end

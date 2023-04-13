@@ -1,0 +1,300 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/cars":
+    get:
+      summary: Retrieves all cars
+      tags:
+      - Cars
+      responses:
+        '200':
+          description: cars found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  image:
+                    type: string
+                  classification:
+                    type: string
+                  model:
+                    type: string
+                  year:
+                    type: string
+                  price_per_day:
+                    type: integer
+                  owner:
+                    type: string
+                  user_id:
+                    type: integer
+                required:
+                - name
+                - description
+                - image
+                - classification
+                - model
+                - year
+                - price_per_day
+                - owner
+                - user_id
+        '406':
+          description: unsupported accept header
+    post:
+      summary: Creates a car
+      tags:
+      - Cars
+      parameters: []
+      responses:
+        '201':
+          description: car created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                image:
+                  type: string
+                classification:
+                  type: string
+                model:
+                  type: string
+                year:
+                  type: string
+                price_per_day:
+                  type: integer
+                owner:
+                  type: string
+                user_id:
+                  type: integer
+              required:
+              - name
+              - description
+              - image
+              - classification
+              - model
+              - year
+              - price_per_day
+              - owner
+              - user_id
+  "/api/v1/cars/{id}":
+    get:
+      summary: Retrieves a car
+      tags:
+      - Cars
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: car found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  image:
+                    type: string
+                  classification:
+                    type: string
+                  model:
+                    type: string
+                  year:
+                    type: string
+                  price_per_day:
+                    type: integer
+                  owner:
+                    type: string
+                  user_id:
+                    type: integer
+                required:
+                - name
+                - description
+                - image
+                - classification
+                - model
+                - year
+                - price_per_day
+                - owner
+                - user_id
+        '404':
+          description: car not found
+        '406':
+          description: unsupported accept header
+    delete:
+      summary: Deletes a car
+      tags:
+      - Cars
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: car deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  image:
+                    type: string
+                  classification:
+                    type: string
+                  model:
+                    type: string
+                  year:
+                    type: string
+                  price_per_day:
+                    type: integer
+                  owner:
+                    type: string
+                  user_id:
+                    type: integer
+                required:
+                - name
+                - description
+                - image
+                - classification
+                - model
+                - year
+                - price_per_day
+                - owner
+                - user_id
+        '404':
+          description: car not found
+        '406':
+          description: unsupported accept header
+  "/api/v1/reservations":
+    get:
+      summary: Retrieves all reservations for a user
+      tags:
+      - Reservations
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: reservations found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  car_name:
+                    type: string
+                  date:
+                    type: string
+                  city:
+                    type: string
+                  duration:
+                    type: integer
+                  user_id:
+                    type: integer
+                  car_id:
+                    type: integer
+                required:
+                - car_name
+                - date
+                - city
+                - duration
+                - user_id
+                - car_id
+        '404':
+          description: reservation not found
+        '406':
+          description: unsupported accept header
+    post:
+      summary: Creates a reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '201':
+          description: reservation created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                car_name:
+                  type: string
+                date:
+                  type: string
+                city:
+                  type: string
+                duration:
+                  type: integer
+                user_id:
+                  type: integer
+                car_id:
+                  type: integer
+              required:
+              - car_name
+              - date
+              - city
+              - duration
+              - user_id
+              - car_id
+  "/users":
+    post:
+      summary: Creates a user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '201':
+          description: user created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+              - username
+              - password
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com

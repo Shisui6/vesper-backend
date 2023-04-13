@@ -24,6 +24,7 @@
 # 📖 Vesper-backend <a name="about-project"></a>
 
 **Vesper-backend** is the rails backend API application for the full stack vesper app. It provides all the endpoints for the frontend to consume. Here the logic for the app is implemented.
+![image](https://user-images.githubusercontent.com/37116322/231762677-66940711-0d7f-4e0f-980a-18e0b8e59c8e.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 

@@ -1,6 +1,6 @@
 class Car < ApplicationRecord
   belongs_to :user
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
 
   validates :name, format: { with: /[a-zA-Z]/ }, presence: true
   validates :description, length: { maximum: 250 }, presence: true
