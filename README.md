@@ -5,7 +5,7 @@
 <details>
   <summary>📗 Table of Contents</summary>
   <ul>
-    <li><a href="#-car-rental-back-end-">📖 Vesper-backend</a></li>
+    <li><a href="#-vesper-backend-">📖 Vesper-backend</a></li>
     <li><a href="#-built-with-">🛠 Built With</a></li>
     <li><a href="#-getting-started-">💻 Getting Started</a></li>
     <li><a href="#-authors-">👥 Authors </a></li>
@@ -88,7 +88,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/Shisui6/car-rental-back-end.git
+  git clone https://github.com/Shisui6/vesper-backend.git
 ```
 
 ### Database setup
@@ -112,7 +112,7 @@ Connect to your local postgres database:
 Install this project with:
 
 ```sh
-  cd car-rental-back-end
+  cd vesper-backend
   bundle install
   rails: db:create - create the database
   rails: db:migrate - run pending migrations for the current environment.
